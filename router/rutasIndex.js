@@ -1,4 +1,5 @@
 const express = require("express");
+const axios = require("axios")
 const router = express.Router();
 
 router.get("/", async(req,res)=>{
@@ -13,6 +14,7 @@ router.get("/contacto",async(req,res)=>{
 })
 
 router.get("/home",async(req,res)=>{
+    console.log(req.session.logged);
     res.render("home")
 })
 
@@ -21,9 +23,17 @@ router.get("/menu",async(req,res)=>{
 })
 
 router.get("/login",async(req,res)=>{
+    if(req.session.logged==="si"){
+        res.redirect("/home")
+    }
     res.render("login")
-    
 })
+
+router.get("/logout",(req,res)=>{
+    req.session.logged="no";
+    res.redirect("/home")
+})
+
 
 
 router.get("/menu",async(req,res)=>{
@@ -31,11 +41,15 @@ router.get("/menu",async(req,res)=>{
 })
 
 router.get("/menuComida",async(req,res)=>{
-    res.render("menucomida")
+    const infor = await axios.get("http://localhost:3000/data")
+    // console.log(infor.data);
+    res.render("menucomida",{platos:infor.data})
 })
 
 router.get("/registro",async(req,res)=>{
     res.render("registro")
 })
+
+
 
 module.exports=router;
