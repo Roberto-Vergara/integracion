@@ -12,7 +12,7 @@ const addUsuario=(req,res)=>{
 
 const delUsuario=(req,res)=>{
     if (err) throw err;
-    var sql = `DELETE FROM usuarios WHERE email = '${req.body.introducir_email}' And contraseña='${req.body.introducir_contraseña}'`;
+    var sql = `DELETE FROM usuarios WHERE email = '${req.body.introducir_email}' And password='${req.body.introducir_contraseña}'`;
     con.query(sql, function (err, result) {
     if (err) throw err;
     console.log("Number of records deleted: " + result.affectedRows);
