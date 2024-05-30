@@ -9,10 +9,26 @@
     <script>
 
 let carrito = []; // Array para almacenar los precios en el carrito
+let lista=[];
 
 // Función para agregar un precio al carrito
 function añadirProductoAlCarrito(elemento) {
   // Obtener el precio del elemento <p class="card-text">
+    
+    const nombre = elemento.getAttribute('nombre');
+  const identificador = elemento.getAttribute('identificador');
+  const imagen = elemento.getAttribute('imagen');
+  const pre = elemento.getAttribute('precio');
+  const marcador = elemento.getAttribute('marcador');
+
+  // Agregar los atributos al array lista
+  lista.push({
+    nombre: nombre,
+    identificador: identificador,
+    imagen: imagen,
+    precio: pre,
+  });
+
   const precioTexto = elemento.parentNode.querySelector('.card-text').textContent.trim();
   // Convertir el texto del precio a entero
   const precio = parseInt(precioTexto);
@@ -45,6 +61,30 @@ function vaciarCarrito() {
   carrito = [];
   mostrarCarrito();
 }
+
+const pagar = async () => {
+  try {
+    const datos = await fetch("http://localhost:8000/db/addplato", {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(lista)
+    });
+
+    if (!datos.ok) {
+      throw new Error('La solicitud POST falló');
+    }
+
+    const data = await datos.json();
+    console.log('Respuesta recibida:', data);
+
+  } catch (error) {
+    console.error('Error en la solicitud POST:', error);
+  }
+}
+
+
     </script>
     
 </head>
@@ -82,16 +122,16 @@ function vaciarCarrito() {
   </div>
   
       <div style="padding: 25px;" class="container">
-        <div class="row">
+        <div class="row" >
             <!-- Elementos generados a partir del JSON -->
             <!-- Carrito -->
             <% platos.forEach(plato => { %>
               <div class="card" style="width: 18rem;">
                 <img src="<%= plato.imagen %>" class="card-img-top" alt="...">
-                <div class="card-body">
+                <div class="card-body" >
                   <h5 class="card-title"><%= plato.nombre %></h5>
-                  <p class="card-text"><%= plato.id %></p>
-                  <a href="#" class="btn btn-primary" marcador="<%= plato.id %> " onClick="añadirProductoAlCarrito(this)">agregar al carrito</a>
+                  <p class="card-text"><%= plato.precio %></p>
+                  <a href="#" class="btn btn-primary" id="informante" nombre="<%= plato.nombre %>" identificador="<%= plato.id %>" imagen="<%= plato.imagen %>" precio="<%= plato.precio %>" marcador="<%= plato.id %> " onClick="añadirProductoAlCarrito(this)">agregar al carrito</a>
                 </div>
               </div>
               <% }) %>
@@ -104,7 +144,7 @@ function vaciarCarrito() {
                  <!-- Precio total -->
                 <p class="text-right">Total: <span id="total"></span>&euro;</p>
                 <button id="boton-vaciar" class="btn btn-danger" onclick="vaciarCarrito()">Vaciar</button>
-                <button id="boton-pagar" class="btn btn-primary">Pagar</button> Nuevo botón Pagar
+                <button id="boton-pagar" class="btn btn-primary" onclick="pagar()">Pagar</button> Nuevo botón Pagar
             </aside>
             
         </div>
