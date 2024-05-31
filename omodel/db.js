@@ -1,17 +1,10 @@
 const mysql = require('mysql');
 
-
-
-
 const con = mysql.createConnection({
   host: "localhost",
   user: "root",
   password: "",
 });
-// crear la base de datos y crear una tabla para usuarios, este codigo solo ingresara valores
-//no creara base de datos ni tabla
-
-
 
 
 con.connect(function(err) {

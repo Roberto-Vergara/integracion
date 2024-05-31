@@ -1,0 +1,9 @@
+
+
+git install
+
+xampp inician mysql
+
+json-server --watch
+
+node index.js

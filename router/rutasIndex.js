@@ -3,12 +3,13 @@ const axios = require("axios")
 const router = express.Router();
 
 
-router.get("/", async(req,res)=>{
-    const infor = await axios.get("http://localhost:3000/platos")
-    console.log(infor.data);
-    console.log("asdasd");
-    res.send("¡Hola desde el servidor!");
+router.get("/login",async(req,res)=>{
+    if(req.session.logged==="si"){
+        res.redirect("/menu")
+    }
+    res.render("login")
 })
+
 
 
 router.get("/contacto",async(req,res)=>{
@@ -18,7 +19,7 @@ router.get("/contacto",async(req,res)=>{
 
 router.get("/home",async(req,res)=>{
     console.log(req.session.role);
-    res.render("home")
+    res.render("menu")
 })
 
 
@@ -27,12 +28,6 @@ router.get("/menu",async(req,res)=>{
 })
 
 
-router.get("/login",async(req,res)=>{
-    if(req.session.logged==="si"){
-        res.redirect("/home")
-    }
-    res.render("login")
-})
 
 
 router.get("/logout",(req,res)=>{
@@ -61,6 +56,23 @@ router.get("/registro",async(req,res)=>{
     res.render("registro")
 })
 
+
+router.get("/delivery",(req,res)=>{
+    if (req.session.role === "repartidor" || req.session.role === "admin") {
+        res.render("delivery");
+    } else {
+        res.redirect("/login");
+    }
+})
+
+router.get("/pedidos", (req, res) => {
+    console.log("llego");
+    if (req.session.role !== "admin") {
+        res.redirect("/login");
+    } else {
+        res.render("pedidos");
+    }
+});
 
 
 

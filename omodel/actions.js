@@ -29,19 +29,17 @@ const delUsuario=(req,res)=>{
 
 
 // arreglar la query
-const iniSesion=(req,res)=>{
-    console.log(req.body);
-    con.query(`SELECT * FROM usuarios WHERE email='${req.body.introducir_email}' AND password='${req.body.introducir_contraseña}'`,(err, result)=>{
+const iniSesion = (req, res) => {
+    // console.log(req.body);
+    con.query(`SELECT * FROM usuarios WHERE email='${req.body.introducir_email}' AND password='${req.body.introducir_contraseña}'`, (err, result) => {
         if (err) {
-            console.log("algo salio mal al iniciar sesion");
-            res.redirect("/login")
-        };
-        req.session.logged="si";
-        req.session.role=`${result[0].role}`;
-        res.redirect("/home")
-    })
-   
-}
+            console.log("Algo salió mal al iniciar sesión");
+            return res.redirect("/login"); // Usamos return para evitar que se ejecute el siguiente código después de la redirección
+        }
+        req.session.role = `${result[0].role}`;
+        res.redirect("/home");
+    });
+};
 
 
 const addPlato=(req,res)=>{

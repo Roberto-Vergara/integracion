@@ -6,187 +6,138 @@
   <title>Comidas - Servicios de Almuerzos</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="./css/vista.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/style.css">
   <style>
-    .carousel-item {
-      height: 400px;
-
-
+    body {
+        background-image: url('./images/fondo.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
     }
-  </style>
+</style>
 </head>
 <body>
-  <div>
-    <nav class="navbar navbar-expand-lg navbar-light bg-azul">
-      <img src="./img/Helthy.png" alt="HeLTHY" class="img-fluid" style="max-width: 150px;">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-  
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto"> <!-- Cambiado de "mr-auto" a "ml-auto" -->
-          <li class="nav-item active">
-            <a class="nav-link h3 font-weight-bold" href="/menu">Inicio<span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link h3 font-weight-bold" href="/menuComida">Ver Menú/Carrito</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link h3 font-weight-bold" href="/contacto">Contacto</a>
-        </li>
-          
-        </ul>
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a href="/login" class="btn btn-primary btn-lg">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
-                    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
-                </svg>
-                <span class="ml-2">Iniciar Sesión/Registrarse</span>
-            </a>
-        </li>
-        </ul>
-      </div>
-    </nav>
-  </div>
-  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner" style="padding: 5px;">
-      <div class="carousel-item active">
-        <img src="./img/pexels-mikhail-nilov-6740535 (1).jpg" class="d-block w-100 h-100 " >
-      </div>
-      <div class="carousel-item">
-        <img src="./img/almuerzos_n.jpg" class="d-block w-100 h-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="./img/pexels-alleksana-5949923.jpg" class="d-block w-100 h-100" alt="...">
-      </div>
-    </div>
-    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
-  <div class="container mt-5 shadow-none p-3 mb-5 bg-light rounded">
-    <div class="row">
-      <div class="col-md-6">
-        <h2>Bienvenido a Comidas</h2>
-        <p>Somos tu mejor opción para disfrutar de deliciosos almuerzos caseros preparados con ingredientes frescos y de la más alta calidad.</p>
-        <a href="/menuComida" class="btn btn-primary">Ver Menú</a>
-      </div>
-      <div class="col-md-6" style="width: 100px;">
-        <img src="./img/tapers-knoweats_a8c78714-010f-4abf-a58e-f6c75c352b39.png" alt="Almuerzos caseros" class="img-fluid">
-      </div>
-    </div>
-  </div>
 
-<footer class="text-center text-lg-start bg-body-tertiary text-muted">
-  <!-- Section: Links -->
-  <section class="">
-   <div class="container text-center text-md-start mt-5">
-    <!-- Grid row -->
-    <div class="row mt-3">
-     <!-- Grid column -->
-     <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-      <!-- Content -->
-      <h6 class="text-uppercase fw-bold mb-4">
-       <i class="fas fa-gem me-3"></i>Comidas
-      </h6>
-      <p>
-      Con Comidas podras disfrutar y comiendo sano toda la semana y sin cocinar
-      </p>
-     </div>
-     <!-- Grid column -->
- 
- 
-     <!-- Grid column -->
-     <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-      <!-- Links -->
-      <h6 class="text-uppercase fw-bold mb-4">
-       Products
-      </h6>
-      <p>
-       <a href="#!" class="text-reset">Angular</a>
-      </p>
-      <p>
-       <a href="#!" class="text-reset">React</a>
-      </p>
-      <p>
-       <a href="#!" class="text-reset">Vue</a>
-      </p>
-      <p>
-       <a href="#!" class="text-reset">Laravel</a>
-      </p>
-     </div>
-     <!-- Grid column -->
- 
- 
-     <!-- Grid column -->
-     <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-      <!-- Links -->
-      <h6 class="text-uppercase fw-bold mb-4">
-       Useful links
-      </h6>
-      <p>
-       <a href="#!" class="text-reset">Pricing</a>
-      </p>
-      <p>
-       <a href="#!" class="text-reset">Settings</a>
-      </p>
-      <p>
-       <a href="#!" class="text-reset">Orders</a>
-      </p>
-      <p>
-       <a href="#!" class="text-reset">Help</a>
-      </p>
-     </div>
-     <!-- Grid column -->
- 
- 
-     <!-- Grid column -->
-     <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-      <!-- Links -->
-      <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
-      <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
-      <p>
-       <i class="fas fa-envelope me-3"></i>
-       info@example.com
-      </p>
-      <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
-      <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
- 
-     </div>
- 
-     <!-- Grid column -->
- 
-    </div>
- 
-    <!-- Grid row -->
- 
-   </div>
- 
-  </section>
- 
-  <!-- Section: Links -->
- 
- 
- 
-  <!-- Copyright -->
- 
-  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
- 
-   © 2021 Copyright:
- 
-   <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
- 
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand font-weight-bold" href="/menu">HEALTHYEATING</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link font-weight-bold" href="/menuComida">Ver Menú/Carrito</a></li>
+                <li class="nav-item"><a class="nav-link font-weight-bold" href="/contacto">Contacto</a></li>
+              </ul>
+            </div>
+            <a href="/login"><button type="button" class="btn btn-danger font-weight-bold">Iniciar/Registrase</button></a>
+            </div>
+        </nav>
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    
+                </ol>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img class="d-block w-100" src="images/hero_1.jpg" alt="First slide">
+                    <div class="carousel-caption d-none d-md-block font-weight-bold">
+                      <h1><strong>COMIDA DELICIOSA</strong></h1>
+                      <p>¡A solo un pedido de distancia!</p>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img class="d-block w-100" src="images/hero_2.jpg" alt="Second slide">
+                    <div class="carousel-caption d-none d-md-block font-weight-bold">
+                      <h1><strong>COMIDA DELICIOSA</strong></h1>
+                      <p>¡A solo un pedido de distancia!</p>
+                        </div>
+                  </div>
+                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+            </div>
+</header>
+  
+<div class="information">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-3 col-md-6">
+              <img src="images/champagne-glass.png" class="glass">
+              <h4>1. Elije</h4>
+              <p>Cada semana hay comida nueva preparada por nuestros jefs.</p>
+          </div>
+          <div class="col-lg-3 col-md-6">
+              <img src="images/fish.png" class="glass">
+              <h4>2. Recibe</h4>
+              <p>Te enviaremos tu pedido cuidadosamente</p>
+          </div>
+          <div class="col-lg-3 col-md-6">
+              <img src="images/coffee-cup.png" class="glass">
+              <h4>Calienta</h4>
+              <p>Tu comida aguantará 8 días en tu refrigerador
+                y la tendrás lista en 3 minutos.</p>
+          </div>
+          <div class="col-lg-3 col-md-6">
+              <img src="images/salad.png" class="glass">
+              <h4>Disfruta</h4>
+              <p>Simplemente disfruta.</p>
+          </div>
+      </div>
   </div>
- 
- 
- </footer>
- 
+</div>
+<footer>
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-4 col-md-6">
+              <h5>About us</h5>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus et dolor blanditiis consequuntur ex voluptates perspiciatis omnis unde minima expedita.</p>
+              <ul class="links">
+                  <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                  <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                  <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                  <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+              </ul>
+          </div>
+          <div class="col-lg-4 col-md-6">
+              <h5>Opening Hours</h5>  
+              <p class="week"><strong>Sunday-Thursday</strong></p>
+              <p class="time">5AM-10PM</p>
+
+              <h5>Contact Info</h5>
+              <p class="address">Address:</p>
+              <p class="white">34 Street Name, City Name Here, United States</p>
+              <p class="tel">Telephone</p>
+              <p class="white">+1 242 4942 290</p>
+              <p class="mail">Email</p>
+              <p class="white">info@yourdomain.com</p>
+          </div>
+          <div class="col-lg-4 col-md-6">
+              <h5>Quick Links</h5>
+              <ul>
+                  <li><a href="#">About</a></li>
+                  <li><a href="#">Terms of Use</a></li>
+                  <li><a href="#">Disclaimers</a></li>
+                  <li><a href="#">Contact</a></li>
+              </ul>
+          </div>
+      </div>
+
+      <p class="copyright">Copyright &copy; 2019 All rights reserved | This template is made with <i class="fas fa-heart"></i> by <a href="#">Colorlib</a></p>
+  </div>
+</footer>
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>

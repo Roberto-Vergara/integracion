@@ -1,22 +1,19 @@
 .bg-verde {
     background-color: rgb(0, 128, 90);
 }
-
+.gg{ color: #fff;}
 
 .navbar-nav {
   margin-right: 0; /* Asegurarse de que no haya margen a la derecha */
 }
 
-
+.bg-color {   
+  background-color: rgb(0, 128, 90);
+}
 
 @import url('https://fonts.googleapis.com/css?family=Poppins');
 
 /* BASIC */
-
-html {
-  background-color: #56baed;
-}
-
 body {
   font-family: "Poppins", sans-serif;
   height: 100vh;
