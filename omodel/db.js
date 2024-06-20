@@ -38,6 +38,11 @@ con.connect(function(err) {
     console.log("tabla creada");
   })
 
+  con.query(`CREATE TABLE platosComprados (idCom INT)`,(err,result)=>{
+    if(err) throw err;
+    console.log("tabla platosComprados creada");
+  })
+
 
   con.query(`DELETE FROM usuarios WHERE email = 'admin@admin.cl'`,(err, result)=>{
     if (err) throw `algo salio mal ${err}`;

@@ -1,14 +1,15 @@
 const express = require("express");
-const axios = require("axios")
+const axios = require("axios");
+const con = require("../omodel/db");
+const { cLogin, cMenuCo, cPedidos, cPlatoCom, cDeli } = require("../scontroladores/actions");
 const router = express.Router();
 
 
-router.get("/login",async(req,res)=>{
-    if(req.session.logged==="si"){
-        res.redirect("/menu")
-    }
-    res.render("login")
-})
+router.get("/login",cLogin)
+router.get("/menuComida",cMenuCo)
+router.get("/pedidos",cPedidos);
+router.post("/platoComprado",cPlatoCom)
+router.get("/delivery",cDeli)
 
 
 
@@ -27,28 +28,13 @@ router.get("/menu",async(req,res)=>{
     res.render("menu")
 })
 
-
-
-
 router.get("/logout",(req,res)=>{
     req.session.logged="no";
     res.redirect("/home")
 })
 
-
-
-
-
-
 router.get("/menu",async(req,res)=>{
     res.render("menu")
-})
-
-
-router.get("/menuComida",async(req,res)=>{
-    const infor = await axios.get("http://localhost:3000/data")
-    // console.log(infor.data);
-    res.render("menucomida",{platos:infor.data})
 })
 
 
@@ -57,22 +43,9 @@ router.get("/registro",async(req,res)=>{
 })
 
 
-router.get("/delivery",(req,res)=>{
-    if (req.session.role === "repartidor" || req.session.role === "admin") {
-        res.render("delivery");
-    } else {
-        res.redirect("/login");
-    }
-})
 
-router.get("/pedidos", (req, res) => {
-    console.log("llego");
-    if (req.session.role !== "admin") {
-        res.redirect("/login");
-    } else {
-        res.render("pedidos");
-    }
-});
+
+
 
 
 

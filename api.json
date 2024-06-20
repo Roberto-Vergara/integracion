@@ -1,182 +1,182 @@
 {
-  "data":[
-  {
-    "nombre": "Spaghetti a la bolognesa",
-    "descripcion": "Pasta con salsa de tomate, carne picada y especias. Rica en carbohidratos y proteínas.",
-    "ingredientes": {
-      "pasta": "150g",
-      "salsa de tomate": "100g",
-      "carne picada": "200g",
-      "especias": "5g"
+  "data": [
+    {
+      "nombre": "Spaghetti a la bolognesa",
+      "descripcion": "Pasta con salsa de tomate, carne picada y especias. Rica en carbohidratos y proteínas.",
+      "ingredientes": {
+        "pasta": "150g",
+        "salsa de tomate": "100g",
+        "carne picada": "200g",
+        "especias": "5g"
+      },
+      "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTA3WMPr8fjSft32xRK8bK3gvbpPJLffdw9lA&s",
+      "id": 1,
+      "precio": 20000
     },
-    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTA3WMPr8fjSft32xRK8bK3gvbpPJLffdw9lA&s",
-    "id":1,
-    "precio":20000
-  },
-  {
-    "nombre": "Sushi de salmón",
-    "descripcion": "Rollitos de arroz y alga nori rellenos de salmón fresco. Alto contenido de proteínas y ácidos grasos omega-3.",
-    "ingredientes": {
-      "arroz": "100g",
-      "salmón fresco": "150g",
-      "alga nori": "20g"
+    {
+      "nombre": "Sushi de salmón",
+      "descripcion": "Rollitos de arroz y alga nori rellenos de salmón fresco. Alto contenido de proteínas y ácidos grasos omega-3.",
+      "ingredientes": {
+        "arroz": "100g",
+        "salmón fresco": "150g",
+        "alga nori": "20g"
+      },
+      "imagen": "https://www.bupasalud.com/sites/default/files/inline-images/bupa_598072389.jpg",
+      "id": 2,
+      "precio": 21000
     },
-    "imagen": "https://www.bupasalud.com/sites/default/files/inline-images/bupa_598072389.jpg",
-    "id":2,
-    "precio":21000
-  },
-  {
-    "nombre": "Hamburguesa con queso",
-    "descripcion": "Carne de res entre pan con queso derretido. Rica en proteínas, grasas y carbohidratos.",
-    "ingredientes": {
-      "carne de res": "200g",
-      "pan": "100g",
-      "queso": "50g"
+    {
+      "nombre": "Hamburguesa con queso",
+      "descripcion": "Carne de res entre pan con queso derretido. Rica en proteínas, grasas y carbohidratos.",
+      "ingredientes": {
+        "carne de res": "200g",
+        "pan": "100g",
+        "queso": "50g"
+      },
+      "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdaXsK-tLo4RBvY1jlGA-2Uf4sgKTpbltzug&s",
+      "id": 3,
+      "precio": 22000
     },
-    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdaXsK-tLo4RBvY1jlGA-2Uf4sgKTpbltzug&s",
-    "id":3,
-    "precio":22000
-  },
-  {
-    "nombre": "Enchiladas mexicanas",
-    "descripcion": "Tortillas de maíz rellenas de pollo o carne, cubiertas de salsa de chile y queso. Alta en proteínas y carbohidratos.",
-    "ingredientes": {
-      "tortillas de maíz": "200g",
-      "pollo desmenuzado": "250g",
-      "salsa de chile": "100g",
-      "queso": "50g"
+    {
+      "nombre": "Enchiladas mexicanas",
+      "descripcion": "Tortillas de maíz rellenas de pollo o carne, cubiertas de salsa de chile y queso. Alta en proteínas y carbohidratos.",
+      "ingredientes": {
+        "tortillas de maíz": "200g",
+        "pollo desmenuzado": "250g",
+        "salsa de chile": "100g",
+        "queso": "50g"
+      },
+      "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSi58AKAPutXLk7vmkd9EYm4Ty-x2e9ADwweg&s",
+      "id": 4,
+      "precio": 23000
     },
-    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSi58AKAPutXLk7vmkd9EYm4Ty-x2e9ADwweg&s",
-    "id":4,
-    "precio":23000
-  },
-  {
-    "nombre": "Paella española",
-    "descripcion": "Plato de arroz español con mariscos, pollo y verduras. Fuente de carbohidratos, proteínas y nutrientes.",
-    "ingredientes": {
-      "arroz": "250g",
-      "mariscos": "200g",
-      "pollo": "200g",
-      "verduras": "150g"
+    {
+      "nombre": "Paella española",
+      "descripcion": "Plato de arroz español con mariscos, pollo y verduras. Fuente de carbohidratos, proteínas y nutrientes.",
+      "ingredientes": {
+        "arroz": "250g",
+        "mariscos": "200g",
+        "pollo": "200g",
+        "verduras": "150g"
+      },
+      "imagen": "https://peopleenespanol.com/thmb/ktyb8yciisQKJXL3xk56GxUlfcw=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/paella-espac3b1ola-2000-7e458a494ada4f4e935a374360c3587b.jpg",
+      "id": 5,
+      "precio": 40000
     },
-    "imagen": "https://peopleenespanol.com/thmb/ktyb8yciisQKJXL3xk56GxUlfcw=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/paella-espac3b1ola-2000-7e458a494ada4f4e935a374360c3587b.jpg",
-    "id":5,
-    "precio":40000
-  },
-  {
-    "nombre": "Pad Thai tailandés",
-    "descripcion": "Fideos de arroz salteados con camarones, tofu o pollo, cacahuetes y vegetales. Rico en proteínas y grasas saludables.",
-    "ingredientes": {
-      "fideos de arroz": "200g",
-      "camarones": "150g",
-      "tofu": "150g",
-      "cacahuetes": "50g",
-      "vegetales": "100g"
+    {
+      "nombre": "Pad Thai tailandés",
+      "descripcion": "Fideos de arroz salteados con camarones, tofu o pollo, cacahuetes y vegetales. Rico en proteínas y grasas saludables.",
+      "ingredientes": {
+        "fideos de arroz": "200g",
+        "camarones": "150g",
+        "tofu": "150g",
+        "cacahuetes": "50g",
+        "vegetales": "100g"
+      },
+      "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcTZPY_rZGi02zrNgBSKn8nZx9PC7h3pASbA&s",
+      "id": 6,
+      "precio": 25000
     },
-    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcTZPY_rZGi02zrNgBSKn8nZx9PC7h3pASbA&s",
-    "id":6,
-    "precio":25000
-  },
-  {
-    "nombre": "Pizza Margarita",
-    "descripcion": "Pizza italiana con salsa de tomate, mozzarella fresca y albahaca. Rica en carbohidratos, proteínas y calcio.",
-    "ingredientes": {
-      "masa de pizza": "300g",
-      "salsa de tomate": "100g",
-      "mozzarella": "150g",
-      "albahaca": "10g"
+    {
+      "nombre": "Pizza Margarita",
+      "descripcion": "Pizza italiana con salsa de tomate, mozzarella fresca y albahaca. Rica en carbohidratos, proteínas y calcio.",
+      "ingredientes": {
+        "masa de pizza": "300g",
+        "salsa de tomate": "100g",
+        "mozzarella": "150g",
+        "albahaca": "10g"
+      },
+      "imagen": "https://www.bupasalud.com/sites/default/files/inline-images/bupa_598072389.jpg",
+      "id": 7,
+      "precio": 27000
     },
-    "imagen": "https://www.bupasalud.com/sites/default/files/inline-images/bupa_598072389.jpg",
-    "id":7,
-    "precio":27000
-  },
-  {
-    "nombre": "Tacos al pastor",
-    "descripcion": "Tortillas de maíz rellenas de carne de cerdo marinada con especias, piña y cebolla. Fuente de proteínas y vitaminas.",
-    "ingredientes": {
-      "tortillas de maíz": "200g",
-      "carne de cerdo": "250g",
-      "piña": "100g",
-      "cebolla": "50g"
+    {
+      "nombre": "Tacos al pastor",
+      "descripcion": "Tortillas de maíz rellenas de carne de cerdo marinada con especias, piña y cebolla. Fuente de proteínas y vitaminas.",
+      "ingredientes": {
+        "tortillas de maíz": "200g",
+        "carne de cerdo": "250g",
+        "piña": "100g",
+        "cebolla": "50g"
+      },
+      "imagen": "https://www.bupasalud.com/sites/default/files/inline-images/bupa_598072389.jpg",
+      "id": 8,
+      "precio": 20800
     },
-    "imagen": "https://www.bupasalud.com/sites/default/files/inline-images/bupa_598072389.jpg",
-    "id":8,
-    "precio":20800
-  },
-  {
-    "nombre": "Curry indio de pollo",
-    "descripcion": "Pollo cocido en una salsa de curry aromático con especias, coco y tomate. Alto contenido de proteínas y antioxidantes.",
-    "ingredientes": {
-      "pollo": "300g",
-      "salsa de curry": "150g",
-      "leche de coco": "200g",
-      "tomate": "100g"
+    {
+      "nombre": "Curry indio de pollo",
+      "descripcion": "Pollo cocido en una salsa de curry aromático con especias, coco y tomate. Alto contenido de proteínas y antioxidantes.",
+      "ingredientes": {
+        "pollo": "300g",
+        "salsa de curry": "150g",
+        "leche de coco": "200g",
+        "tomate": "100g"
+      },
+      "imagen": "https://www.bupasalud.com/sites/default/files/inline-images/bupa_598072389.jpg",
+      "id": 9,
+      "precio": 20010
     },
-    "imagen": "https://www.bupasalud.com/sites/default/files/inline-images/bupa_598072389.jpg",
-    "id":9,
-    "precio":20010
-  },
-  {
-    "nombre": "Pato a la naranja",
-    "descripcion": "Pato asado con una salsa agridulce de naranja y especias. Rico en proteínas, grasas y vitamina C.",
-    "ingredientes": {
-      "pato": "300g",
-      "naranja": "200g",
-      "miel": "50g",
-      "especias": "10g"
+    {
+      "nombre": "Pato a la naranja",
+      "descripcion": "Pato asado con una salsa agridulce de naranja y especias. Rico en proteínas, grasas y vitamina C.",
+      "ingredientes": {
+        "pato": "300g",
+        "naranja": "200g",
+        "miel": "50g",
+        "especias": "10g"
+      },
+      "imagen": "https://www.bupasalud.com/sites/default/files/inline-images/bupa_598072389.jpg",
+      "id": 10,
+      "precio": 20600
     },
-    "imagen": "https://www.bupasalud.com/sites/default/files/inline-images/bupa_598072389.jpg",
-    "id":10,
-    "precio":20600
-  },
-  {
-    "nombre": "Filete de salmón a la parrilla",
-    "descripcion": "Filete de salmón fresco asado a la parrilla con limón y hierbas. Alto contenido de proteínas y ácidos grasos omega-3.",
-    "ingredientes": {
-      "filete de salmón": "250g",
-      "limón": "50g",
-      "hierbas": "10g"
+    {
+      "nombre": "Filete de salmón a la parrilla",
+      "descripcion": "Filete de salmón fresco asado a la parrilla con limón y hierbas. Alto contenido de proteínas y ácidos grasos omega-3.",
+      "ingredientes": {
+        "filete de salmón": "250g",
+        "limón": "50g",
+        "hierbas": "10g"
+      },
+      "imagen": "https://www.bupasalud.com/sites/default/files/inline-images/bupa_598072389.jpg",
+      "id": 11,
+      "precio": 20600
     },
-    "imagen": "https://www.bupasalud.com/sites/default/files/inline-images/bupa_598072389.jpg",
-    "id":11,
-    "precio":20600
-  },
-  {
-    "nombre": "Risotto de champiñones",
-    "descripcion": "Arroz italiano cocido en caldo de champiñones con queso parmesano. Rico en carbohidratos, proteínas y calcio.",
-    "ingredientes": {
-      "arroz": "200g",
-      "champiñones": "150g",
-      "queso parmesano": "50g"
+    {
+      "nombre": "Risotto de champiñones",
+      "descripcion": "Arroz italiano cocido en caldo de champiñones con queso parmesano. Rico en carbohidratos, proteínas y calcio.",
+      "ingredientes": {
+        "arroz": "200g",
+        "champiñones": "150g",
+        "queso parmesano": "50g"
+      },
+      "imagen": "https://www.bupasalud.com/sites/default/files/inline-images/bupa_598072389.jpg",
+      "id": 12,
+      "precio": 29000
     },
-    "imagen": "https://www.bupasalud.com/sites/default/files/inline-images/bupa_598072389.jpg",
-    "id":12,
-    "precio":29000
-  },
-  {
-    "nombre": "Ceviche peruano",
-    "descripcion": "Pescado blanco crudo marinado en jugo de limón, cilantro, cebolla y ají. Fuente de proteínas y vitamina C.",
-    "ingredientes": {
-      "pescado blanco": "300g",
-      "limón": "100g",
-      "cilantro": "50g",
-      "cebolla": "50g",
-      "ají": "20g"
+    {
+      "nombre": "Ceviche peruano",
+      "descripcion": "Pescado blanco crudo marinado en jugo de limón, cilantro, cebolla y ají. Fuente de proteínas y vitamina C.",
+      "ingredientes": {
+        "pescado blanco": "300g",
+        "limón": "100g",
+        "cilantro": "50g",
+        "cebolla": "50g",
+        "ají": "20g"
+      },
+      "imagen": "https://www.bupasalud.com/sites/default/files/inline-images/bupa_598072389.jpg",
+      "id": 13,
+      "precio": 24000
     },
-    "imagen": "https://www.bupasalud.com/sites/default/files/inline-images/bupa_598072389.jpg",
-    "id":13,
-    "precio":24000
-  },
-  {
-    "nombre": "Moussaka griega",
-    "descripcion": "Pastel de berenjenas, carne picada y salsa de tomate cubierto con bechamel. Rico en proteínas, fibra y vitaminas.",
-    "ingredientes": {
-      "berenjenas": "300g",
-      "carne picada": "200g"
-    },
-    "imagen": "https://www.bupasalud.com/sites/default/files/inline-images/bupa_598072389.jpg",
-    "id":14,
-    "precio":90000
-  }
-]
+    {
+      "nombre": "Moussaka griegas modicado",
+      "descripcion": "Pastel de berenjenas, carne picada y salsa de tomate cubierto con bechamel. Rico en proteínas, fibra y vitaminas.",
+      "ingredientes": {
+        "berenjenas": "300asdg",
+        "carne picada": "20asd0g"
+      },
+      "imagen": "https://www.bupasalud.com/sites/default/files/inline-images/bupa_598072389.jpg",
+      "id": 14,
+      "precio": 90000
+    }
+  ]
 }

@@ -3,69 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Menu</title>
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/vista.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
     <style>
         body {
-            background: url('./images/fondo.jpg') no-repeat center center fixed;
-            background-size: cover;
-        }
+    background: url('./images/fondo.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Open Sans', sans-serif;
+}
     </style>
-    <script>
-        let carrito = []; // Array para almacenar los precios en el carrito
-
-        // Función para agregar un precio al carrito
-        function añadirProductoAlCarrito(elemento) {
-            // Obtener el precio del elemento <p class="card-text">
-            const precioTexto = elemento.parentNode.querySelector('.card-text').textContent.trim();
-            // Convertir el texto del precio a entero
-            const precio = parseInt(precioTexto);
-            carrito.push(precio);
-            mostrarCarrito();
-        }
-
-        // Función para mostrar los precios en el carrito
-        function mostrarCarrito() {
-            const carritoElement = document.getElementById('carrito');
-            carritoElement.innerHTML = '';
-            carrito.forEach(precio => {
-                const li = document.createElement('li');
-                li.textContent = `${precio} pesos`;
-                li.classList.add('list-group-item');
-                carritoElement.appendChild(li);
-            });
-            calcularTotal();
-        }
-
-        // Función para calcular el total del carrito
-        function calcularTotal() {
-            const totalElement = document.getElementById('total');
-            const total = carrito.reduce((acc, precio) => acc + precio, 0);
-            totalElement.textContent = total;
-        }
-
-        // Función para vaciar el carrito
-        function vaciarCarrito() {
-            carrito = [];
-            mostrarCarrito();
-        }
-
-        const pagar=async()=>{
-          console.log("llego");
-          const res = await fetch("/pay/create-checkout-session",{
-            method:"POST"
-          })
-          const data = await res.json()
-          window.location.href=data.url;
-        }
-    </script>
 </head>
+
 <body>
     <!-- Nuevo Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -76,42 +29,51 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
-                    
                     <li class="nav-item"><a class="nav-link font-weight-bold" href="/menuComida">Ver Menú/Carrito</a></li>
                     <li class="nav-item"><a class="nav-link font-weight-bold" href="/contacto">Contacto</a></li>
                 </ul>
             </div>
+            <a href="#" class="cart-icon" onclick="toggleCart()">
+                <i class="fas fa-shopping-cart"></i> <!-- Utilizando Font Awesome para el ícono -->
+            </a>
             <a href="/login"><button type="button" class="btn btn-danger font-weight-bold">Iniciar/Registrarse</button></a>
         </div>
     </nav>
 
-    <div style="padding: 30px;" class="container">
-        <div class="row" style="padding: 30px;">
-            <!-- Elementos generados a partir del JSON -->
-            <!-- Carrito -->
+    <div class="container my-5">
+        <div class="row">
             <% platos.forEach(plato => { %>
-                <div class="card" style="width: 18rem;">
-                    <img src="<%= plato.imagen %>" class="card-img-top" alt="...">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm rounded">
+                    <img src="<%= plato.imagen %>" class="card-img-top" alt="Imagen del plato">
                     <div class="card-body">
                         <h5 class="card-title"><%= plato.nombre %></h5>
-                        <p class="card-text"><%= plato.precio %></p>
-                        <a href="#" class="btn btn-primary" marcador="<%= plato.id %> " onClick="añadirProductoAlCarrito(this)">Agregar al carrito</a>
+                        <p class="card-text">$ <%= plato.precio %> pesos</p>
+                        <a href="#" class="btn btn-primary btn-agregar enviar" marcador="<%= plato.id %>" onClick="añadirProductoAlCarrito(this)">Agregar al carrito</a>
                     </div>
                 </div>
+            </div>
             <% }) %>
+        </div>
+    </div>
             <!-- CARRITO -->
-            <aside class="col-sm-4">
-                <h2>Carrito</h2>
+            <aside id="cart-sidebar" class="col-lg-3 cart-sidebar">
+                <div class="sidebar-header">
+                    <h2>Carrito</h2>
+                </div>
                 <!-- Elementos del carrito -->
-                <ul id="carrito" class="list-group"></ul>
-                <hr>
-                <!-- Precio total -->
-                <p class="text-right">Total: <span id="total"></span> pesos</p>
-                <button id="boton-vaciar" class="btn btn-danger" onclick="vaciarCarrito()">Vaciar</button>
-                <button id="boton-pagar hola" class="btn btn-primary" onclick="pagar()">Pagar</button>
+                <div class="sidebar-body">
+                    <ul id="carrito" class="list-group"></ul>
+                    <hr>
+                    <!-- Precio total -->
+                    <p class="text-right">Total: <span id="total"></span> pesos</p>
+                    <button id="boton-vaciar" class="btn btn-danger" onclick="vaciarCarrito()">Vaciar</button>
+                    <button id="boton-pagar hola" class="btn btn-primary" onclick="pagar()">Pagar</button>
+                </div>
             </aside>
         </div>
     </div>
+
     <footer>
         <div class="container">
             <div class="row">
@@ -151,5 +113,12 @@
             <p class="copyright">Copyright &copy; 2019 All rights reserved | This template is made with <i class="fas fa-heart"></i> by <a href="#">Colorlib</a></p>
         </div>
     </footer>
+
+    <!-- Scripts de Bootstrap y otros omitidos por brevedad -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <script src="./js/menuComida.js"></script>
 </body>
 </html>

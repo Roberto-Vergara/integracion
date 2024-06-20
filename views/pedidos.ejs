@@ -19,53 +19,7 @@
             background-attachment: fixed;
         }
     </style>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const baseDeDatos = [
-                { id: 1, nombre: 'Spaghetti a la bolognesa', precio: 20000, imagen: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTA3WMPr8fjSft32xRK8bK3gvbpPJLffdw9lA&s' },
-                { id: 2, nombre: 'Sushi de salmón', precio: 21000, imagen: 'https://www.bupasalud.com/sites/default/files/inline-images/bupa_598072389.jpg' },
-                { id: 3, nombre: 'Hamburguesa con queso', precio: 22000, imagen: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdaXsK-tLo4RBvY1jlGA-2Uf4sgKTpbltzug&s' }  
-            ];
 
-            const DOMitems = document.querySelector('#items');
-
-            function renderizarProductos() {
-                baseDeDatos.forEach((info) => {
-                    const miNodo = document.createElement('div');
-                    miNodo.classList.add('card', 'col-sm-4');
-                    const miNodoCardBody = document.createElement('div');
-                    miNodoCardBody.classList.add('card-body');
-                    const miNodoTitle = document.createElement('h5');
-                    miNodoTitle.classList.add('card-title');
-                    miNodoTitle.textContent = info.nombre;
-                    const miNodoImagen = document.createElement('img');
-                    miNodoImagen.classList.add('img-fluid');
-                    miNodoImagen.setAttribute('src', info.imagen);
-                    const miNodoBoton = document.createElement('button');
-                    miNodoBoton.classList.add('btn', 'btn-primary');
-                    miNodoBoton.textContent = 'Mandar a delivery';
-                    miNodoBoton.setAttribute('data-id', info.id);
-                    miNodoBoton.addEventListener('click', agregarPedido);
-                    miNodoCardBody.appendChild(miNodoImagen);
-                    miNodoCardBody.appendChild(miNodoTitle);
-                    miNodoCardBody.appendChild(miNodoBoton);
-                    miNodo.appendChild(miNodoCardBody);
-                    DOMitems.appendChild(miNodo);
-                });
-            }
-
-            function agregarPedido(event) {
-                const id = event.target.getAttribute('data-id');
-                const pedido = baseDeDatos.find(producto => producto.id == id);
-                let pedidos = JSON.parse(localStorage.getItem('pedidos')) || [];
-                pedidos.push(pedido);
-                localStorage.setItem('pedidos', JSON.stringify(pedidos));
-                alert('Pedido agregado para entrega.');
-            }
-
-            renderizarProductos();
-        });
-    </script>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -84,49 +38,32 @@
         </div>
     </nav>
     <div style="padding: 25px;" class="container">
-        <div class="row">
-            <main id="items" class="col-sm-8 row"></main>
-        </div>
-    </div>
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <h5>About us</h5>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus et dolor blanditiis consequuntur ex voluptates perspiciatis omnis unde minima expedita.</p>
-                    <ul class="links">
-                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <h5>Opening Hours</h5>  
-                    <p class="week"><strong>Sunday-Thursday</strong></p>
-                    <p class="time">5AM-10PM</p>
-
-                    <h5>Contact Info</h5>
-                    <p class="address">Address:</p>
-                    <p class="white">34 Street Name, City Name Here, United States</p>
-                    <p class="tel">Telephone</p>
-                    <p class="white">+1 242 4942 290</p>
-                    <p class="mail">Email</p>
-                    <p class="white">info@yourdomain.com</p>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <h5>Quick Links</h5>
-                    <ul>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Terms of Use</a></li>
-                        <li><a href="#">Disclaimers</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
+        <% platos.forEach(plato => { %>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm rounded">
+                    <img src="<%= plato.imagen %>" class="card-img-top" alt="Imagen del plato">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= plato.nombre %></h5>
+                        <p class="card-text">$ <%= plato.precio %> pesos</p>
+                        <button class="btn btn-primary agregar-pedido" data-id="<%= plato.id %>"
+                                data-nombre="<%= plato.nombre %>"
+                                data-imagen="<%= plato.imagen %>"
+                                data-precio="<%= plato.precio %>">
+                            Agregar al carrito
+                        </button>
+                    </div>
                 </div>
             </div>
-
-            <p class="copyright">Copyright &copy; 2019 All rights reserved | This template is made with <i class="fas fa-heart"></i> by <a href="#">Colorlib</a></p>
-        </div>
+        <% }) %>
+    </div>
+    <footer>
+        <!-- Contenido del pie de página -->
     </footer>
+    
+    <!-- Scripts al final del body -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="./js/pedidos.js"></script>
 </body>
 </html>
