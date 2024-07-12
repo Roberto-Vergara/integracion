@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
             botonEstado.classList.add('btn', 'btn-primary');
             botonEstado.textContent = pedido.estado;
             botonEstado.addEventListener('click', () => cambiarEstadoPedido(index));
+            botonEstado.id =`mid${pedido.id}`;
 
             miNodoCardBody.appendChild(miNodoImagen);
             miNodoCardBody.appendChild(miNodoTitle);

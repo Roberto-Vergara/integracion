@@ -48,25 +48,50 @@ const pagar=async()=>{
         //   console.log("llego");
         //   console.log(carrito);
         try {
-            const mandarId = await fetch("/platoComprado",{
+            const mandarId = await fetch("/platoComprado", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json" 
                 },
                 body: JSON.stringify(carrito)
-            })
-    
-            console.log("corriendo");
-    
-            const res = await fetch("/pay/create-checkout-session",{
-            method:"POST"
-            })
-            const data = await res.json()
-            window.location.href=data.url;
-
+            });
+        
+            if (!mandarId.ok) {
+                throw new Error(`Error al enviar datos: ${mandarId.status}`);
+            }
+        
+            const res = await mandarId.json();
+            console.log("Respuesta del servidor:", res);
+        
+            // Redirigir después de recibir una respuesta exitosa
+            window.location.href = "http://localhost:8000/pedidos";
         } catch (error) {
-            console.log("algo salio mal");
+            console.error("Error al enviar datos:", error);
+            // Manejar errores como desees
         }
+        // try {
+        //     const mandarId = await fetch("/platoComprado",{
+        //         method: "POST",
+        //         headers: {
+        //             "Content-Type": "application/json" 
+        //         },
+        //         body: JSON.stringify(carrito)
+        //     })
+    
+        //     const res = await mandarId.json();
+        //     window.location.href="http://localhost:8000/pedidos";
+        //     console.log("corriendo");
+            
+    
+        //     // const res = await fetch("/pay/create-checkout-session",{
+        //     // method:"POST"
+        //     // })
+        //     // const data = await res.json()
+            
+
+        // } catch (error) {
+        //     console.log("algo salio mal");
+        // }
         
 
 }

@@ -2,6 +2,8 @@ const axios = require("axios");
 const con = require("../omodel/db");
 
 const {  Stripe } = require("stripe");
+
+// vacio para que no funcione y force error
 const stripe= new Stripe("");
 
 const cLogin =async(req, res)=>{

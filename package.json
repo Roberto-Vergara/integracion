@@ -4,18 +4,24 @@
   "description": "duoc",
   "main": "index.js",
   "scripts": {
-    "test":"jest"
+    "test-init": ".\\node_modules\\jasmine\\bin\\jasmine.js init",
+    "test": "./node_modules/jasmine/bin/jasmine.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "axios": "^1.6.8",
+    "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "ejs": "^3.1.10",
     "express": "^4.19.2",
     "express-session": "^1.18.0",
     "json-server": "^1.0.0-beta.0",
     "mysql": "^2.18.1",
+    "request": "^2.88.2",
     "stripe": "^15.8.0"
+  },
+  "devDependencies": {
+    "cypress": "^13.13.0"
   }
 }

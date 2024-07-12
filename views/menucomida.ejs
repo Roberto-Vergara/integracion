@@ -33,7 +33,7 @@
                     <li class="nav-item"><a class="nav-link font-weight-bold" href="/contacto">Contacto</a></li>
                 </ul>
             </div>
-            <a href="#" class="cart-icon" onclick="toggleCart()">
+            <a href="#" id="cart" class="cart-icon" onclick="toggleCart()">
                 <i class="fas fa-shopping-cart"></i> <!-- Utilizando Font Awesome para el ícono -->
             </a>
             <a href="/login"><button type="button" class="btn btn-danger font-weight-bold">Iniciar/Registrarse</button></a>
@@ -43,13 +43,13 @@
     <div class="container my-5">
         <div class="row">
             <% platos.forEach(plato => { %>
-            <div class="col-md-4 mb-4">
+            <div class="col-md-4 mb-4" >
                 <div class="card h-100 shadow-sm rounded">
                     <img src="<%= plato.imagen %>" class="card-img-top" alt="Imagen del plato">
                     <div class="card-body">
                         <h5 class="card-title"><%= plato.nombre %></h5>
                         <p class="card-text">$ <%= plato.precio %> pesos</p>
-                        <a href="#" class="btn btn-primary btn-agregar enviar" marcador="<%= plato.id %>" onClick="añadirProductoAlCarrito(this)">Agregar al carrito</a>
+                        <a href="#" id="mi<%= plato.id %>" class="btn btn-primary btn-agregar enviar" marcador="<%= plato.id %>" onClick="añadirProductoAlCarrito(this)">Agregar al carrito</a>
                     </div>
                 </div>
             </div>
@@ -68,7 +68,7 @@
                     <!-- Precio total -->
                     <p class="text-right">Total: <span id="total"></span> pesos</p>
                     <button id="boton-vaciar" class="btn btn-danger" onclick="vaciarCarrito()">Vaciar</button>
-                    <button id="boton-pagar hola" class="btn btn-primary" onclick="pagar()">Pagar</button>
+                    <a href="http://localhost:8000/pedidos" id="boton-pagar hola" class="btn btn-primary goku" onclick="pagar()">Pagar</a>
                 </div>
             </aside>
         </div>

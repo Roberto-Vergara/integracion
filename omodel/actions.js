@@ -30,10 +30,16 @@ const delUsuario=(req,res)=>{
 
 // arreglar la query
 const iniSesion = (req, res) => {
-    // console.log(req.body);
+    console.log(req.body);
+    // console.log("aca");
     con.query(`SELECT * FROM usuarios WHERE email='${req.body.introducir_email}' AND password='${req.body.introducir_contraseña}'`, (err, result) => {
         if (err) {
-            console.log("Algo salió mal al iniciar sesión");
+            console.log("Algo salió mal al iniciar sesión",err);
+            return res.redirect("/login"); // Usamos return para evitar que se ejecute el siguiente código después de la redirección
+        }
+        // console.log("funciono");
+        if(result==""){  //resulta que cuenta como [] el "", pero si pongo el [] sale mal
+            // console.log("aca");
             return res.redirect("/login"); // Usamos return para evitar que se ejecute el siguiente código después de la redirección
         }
         req.session.role = `${result[0].role}`;

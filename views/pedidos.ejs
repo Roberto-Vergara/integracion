@@ -45,7 +45,7 @@
                     <div class="card-body">
                         <h5 class="card-title"><%= plato.nombre %></h5>
                         <p class="card-text">$ <%= plato.precio %> pesos</p>
-                        <button class="btn btn-primary agregar-pedido" data-id="<%= plato.id %>"
+                        <button id="envi<%= plato.id %>" class="btn btn-primary agregar-pedido" data-id="<%= plato.id %>"
                                 data-nombre="<%= plato.nombre %>"
                                 data-imagen="<%= plato.imagen %>"
                                 data-precio="<%= plato.precio %>">
