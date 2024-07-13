@@ -100,3 +100,12 @@ function toggleCart() {
     const cartSidebar = document.getElementById('cart-sidebar');
     cartSidebar.classList.toggle('open');
 }
+
+function mostrarIngredientes(platoId) {
+    var ingredientesDiv = document.getElementById('ingredientes' + platoId);
+    if (ingredientesDiv.style.display === 'none') {
+         ingredientesDiv.style.display = 'block';
+    } else {
+        ingredientesDiv.style.display = 'none';
+    }
+    }

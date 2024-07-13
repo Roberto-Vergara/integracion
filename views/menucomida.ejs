@@ -43,16 +43,25 @@
     <div class="container my-5">
         <div class="row">
             <% platos.forEach(plato => { %>
-            <div class="col-md-4 mb-4" >
-                <div class="card h-100 shadow-sm rounded">
-                    <img src="<%= plato.imagen %>" class="card-img-top" alt="Imagen del plato">
-                    <div class="card-body">
-                        <h5 class="card-title"><%= plato.nombre %></h5>
-                        <p class="card-text">$ <%= plato.precio %> pesos</p>
-                        <a href="#" id="mi<%= plato.id %>" class="btn btn-primary btn-agregar enviar" marcador="<%= plato.id %>" onClick="añadirProductoAlCarrito(this)">Agregar al carrito</a>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm rounded">
+                        <img src="<%= plato.imagen %>" class="card-img-top" alt="Imagen del plato">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= plato.nombre %></h5>
+                            <p class="card-text">$ <%= plato.precio %> pesos</p>
+                            <a href="#" id="mi<%= plato.id %>" class="btn btn-primary btn-agregar enviar" marcador="<%= plato.id %>" onClick="añadirProductoAlCarrito(this)">Agregar al carrito</a>
+                            <button type="button" class="btn btn-link mt-2 btn-sm" onclick="mostrarIngredientes('<%= plato.id %>')">Ver ingredientes</button>
+                            <div id="ingredientes<%= plato.id %>" class="card-text ingredientes" style="display: none;">
+                                <h6>Ingredientes:</h6>
+                                <ul class="list-unstyled">
+                                    <% for (const ingrediente in plato.ingredientes) { %>
+                                        <li><%= ingrediente %>: <%= plato.ingredientes[ingrediente] %></li>
+                                    <% } %>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
             <% }) %>
         </div>
     </div>
